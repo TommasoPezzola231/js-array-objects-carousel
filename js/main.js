@@ -1,3 +1,19 @@
+function carousel(index, whereWrite) {
+    const img = images[index][`image`];
+    const title = images[index][`title`];
+    const text = images[index][`text`];
+
+    let contentHtml = `<img src="./${img}" alt="">`;
+    contentHtml += `<div class="testoFoto">`;
+    contentHtml += `<h3>${title}</h3>`;
+    contentHtml += `<p>${text}</p>`
+    contentHtml += `</div>`
+
+    whereWrite.innerHTML = (contentHtml);
+}
+
+
+
 const images = [
     {
         image: 'img/01.webp',
@@ -25,29 +41,17 @@ const images = [
 const container = document.getElementById("container");
 const nextButton = document.getElementById("avanti");
 const backButton = document.getElementById("indietro")
+let i = 0
 
-
+carousel(i, container)
 
 nextButton.addEventListener("click", function() {
-    
-    
-    
-    images.forEach((element, i) => {
-        const img = element[`image`];
-        const title = element[`title`];
-        const text = element[`text`];
-        console.log(img)
-        
-        let contentHtml = `<img src="./${img}" alt="">`;
-        contentHtml += `<div class="testoFoto">`;
-        contentHtml += `<h3>${title}</h3>`;
-        contentHtml += `<p>${text}</p>`
-        contentHtml += `</div>`
-        
-        element = 0
-        container.innerHTML = (contentHtml)
-    });
-    
-    i++
+    i++;
+    carousel(i, container)
+});
+
+backButton.addEventListener("click", function() {
+    i--;
+    carousel(i, container);
 })
 
