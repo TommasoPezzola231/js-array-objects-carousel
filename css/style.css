@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.dFlex {
+    display: flex;
+}
+
+.container {
+    max-width: 800px;
+    margin: 3rem auto;
+    aspect-ratio: 16 / 9;
+    position: relative;
+}
+
+main img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+button {
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#avanti {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translatey(-50%);
+    margin-right: 0.5rem;
+}
+
+#indietro {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translatey(-50%);
+    margin-left: 0.5rem;
+}
+
+.testoFoto {
+    text-align: end;
+    color: white;
+    position: absolute;
+    bottom: 0%;
+    right: 0;
+    margin-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 1rem;
+}
