@@ -47,11 +47,19 @@ carousel(i, container)
 
 nextButton.addEventListener("click", function() {
     i++;
+    if (i >= images.length) {
+        i = 0
+    }
+        
     carousel(i, container)
+    
 });
 
 backButton.addEventListener("click", function() {
     i--;
-    carousel(i, container);
+    if (i < 0) {
+        i = images.length - 1
+    }
+    carousel(i, container)
 })
 
